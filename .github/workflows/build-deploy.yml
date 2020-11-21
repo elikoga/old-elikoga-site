@@ -12,7 +12,7 @@ jobs:
       GHC_VERSION: '8.8.4'
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-haskell@v1.1
+      - uses: actions/setup-haskell@v1
         with:
           ghc-version: ${{ env.GHC_VERSION }} # Exact version of ghc to use
           # cabal-version: 'latest'. Omitted, but defalts to 'latest'
