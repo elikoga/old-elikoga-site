@@ -1,4 +1,4 @@
-name:               elikoga-github-io
+name:               elikoga-site
 version:            0.1.0.0
 build-type:         Simple
 cabal-version:      >= 1.10
