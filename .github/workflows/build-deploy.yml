@@ -21,6 +21,7 @@ jobs:
       - name: 'Run actions/cache@v2: cache stack folders'
         uses: actions/cache@v2
         with:
+          path: ~/.stack
           key: stack-store-${{ runner.OS }}-${{ env.GHC_VERSION }}-${{ hashFiles('cabal.project.freeze') }}
           restore-keys: |
               cabal-store-${{ runner.OS }}-${{ env.GHC_VERSION }}-
