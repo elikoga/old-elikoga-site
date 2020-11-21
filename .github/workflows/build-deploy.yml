@@ -1,0 +1,35 @@
+name: Build and deploy to github pages
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-deploy:
+    name: Build and deploy
+    runs-on: debian-latest
+    env:
+      GHC_VERSION: '8.8.4'
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-haskell@v1.1
+        with:
+          ghc-version: ${{ env.GHC_VERSION }} # Exact version of ghc to use
+          # cabal-version: 'latest'. Omitted, but defalts to 'latest'
+          enable-stack: true
+          stack-version: 'latest'
+      - name: 'Run actions/cache@v2: cache stack folders'
+        uses: actions/cache@v2
+        key: stack-store-${{ runner.OS }}-${{ env.GHC_VERSION }}-${{ hashFiles('cabal.project.freeze') }}
+        restore-keys: |
+            cabal-store-${{ runner.OS }}-${{ env.GHC_VERSION }}-
+            cabal-store-${{ runner.OS }}-
+      - run: stack build --only-snapshot
+      - run: stack build
+      - run: stack exec site build
+      - name: 'Run peaceiris/actions-gh-pages@v3: deploy to github pages'
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/master'
+        publish_dir: ./_site
+        external_repository: elikoga/elikoga.github.io
+        personal_token: ${{ secrets.PERSONAL_TOKEN }}
