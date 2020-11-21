@@ -30,6 +30,7 @@ jobs:
       - name: 'Run peaceiris/actions-gh-pages@v3: deploy to github pages'
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/master'
-        publish_dir: ./_site
-        external_repository: elikoga/elikoga.github.io
-        personal_token: ${{ secrets.PERSONAL_TOKEN }}
+        with:
+          publish_dir: ./_site
+          external_repository: elikoga/elikoga.github.io
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
