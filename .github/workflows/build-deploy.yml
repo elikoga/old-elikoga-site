@@ -20,10 +20,11 @@ jobs:
           stack-version: 'latest'
       - name: 'Run actions/cache@v2: cache stack folders'
         uses: actions/cache@v2
-        key: stack-store-${{ runner.OS }}-${{ env.GHC_VERSION }}-${{ hashFiles('cabal.project.freeze') }}
-        restore-keys: |
-            cabal-store-${{ runner.OS }}-${{ env.GHC_VERSION }}-
-            cabal-store-${{ runner.OS }}-
+        with:
+          key: stack-store-${{ runner.OS }}-${{ env.GHC_VERSION }}-${{ hashFiles('cabal.project.freeze') }}
+          restore-keys: |
+              cabal-store-${{ runner.OS }}-${{ env.GHC_VERSION }}-
+              cabal-store-${{ runner.OS }}-
       - run: stack build --only-snapshot
       - run: stack build
       - run: stack exec site build
