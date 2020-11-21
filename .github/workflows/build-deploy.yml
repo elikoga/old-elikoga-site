@@ -22,7 +22,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.stack
-          key: stack-store-${{ runner.OS }}-${{ env.GHC_VERSION }}-${{ hashFiles('cabal.project.freeze') }}
+          key: stack-store-${{ runner.OS }}-${{ env.GHC_VERSION }}-${{ hashFiles('stack.yaml.lock') }}
           restore-keys: |
               cabal-store-${{ runner.OS }}-${{ env.GHC_VERSION }}-
               cabal-store-${{ runner.OS }}-
