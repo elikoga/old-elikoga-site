@@ -24,8 +24,8 @@ jobs:
           path: ~/.stack
           key: stack-store-${{ runner.OS }}-${{ env.GHC_VERSION }}-${{ hashFiles('stack.yaml.lock') }}
           restore-keys: |
-              cabal-store-${{ runner.OS }}-${{ env.GHC_VERSION }}-
-              cabal-store-${{ runner.OS }}-
+              stack-store-${{ runner.OS }}-${{ env.GHC_VERSION }}-
+              stack-store-${{ runner.OS }}-
       - run: stack build --only-dependencies
       - run: stack build
       - run: stack exec site build
