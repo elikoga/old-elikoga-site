@@ -36,3 +36,4 @@ jobs:
           publish_dir: ./_site
           external_repository: elikoga/elikoga.github.io
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          cname: eliko.ga
