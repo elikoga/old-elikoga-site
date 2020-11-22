@@ -1,0 +1,16 @@
+.social-list {
+    display: flex;
+    align-items: end;
+}
+
+.social-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+
+.social-icon {
+    font-size: x-large;
+}

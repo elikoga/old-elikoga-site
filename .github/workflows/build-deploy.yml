@@ -26,7 +26,7 @@ jobs:
           restore-keys: |
               cabal-store-${{ runner.OS }}-${{ env.GHC_VERSION }}-
               cabal-store-${{ runner.OS }}-
-      - run: stack build --only-snapshot
+      - run: stack build --only-dependencies
       - run: stack build
       - run: stack exec site build
       - name: 'Run peaceiris/actions-gh-pages@v3: deploy to github pages'

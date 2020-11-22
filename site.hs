@@ -2,58 +2,41 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
+import Hakyll.Web.Sass
 
 
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
-    match "images/*" $ do
-        route   idRoute
+    match "assets/images/*" $ do
+        route idRoute
         compile copyFileCompiler
 
-    match "css/*" $ do
-        route   idRoute
+    match "assets/css/*.css" $ do
+        route idRoute
         compile compressCssCompiler
+    
+    match "assets/js/*.js" $ do
+        route idRoute
+        compile copyFileCompiler
 
-    match (fromList ["about.rst", "contact.markdown"]) $ do
-        route   $ setExtension "html"
+    scssDependency <- makePatternDependency "assets/css/**.scss"
+    rulesExtraDependencies [scssDependency]
+        $ match "assets/css/default.scss"
+        $ do
+            route $ setExtension "css"
+            compile (fmap compressCss <$> sassCompiler)
+
+    match "sites/*.md" $ do
+        route $ gsubRoute "sites/" (const "") `composeRoutes` setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
 
-    match "posts/*" $ do
-        route $ setExtension "html"
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
-            >>= relativizeUrls
-
-    create ["archive.html"] $ do
-        route idRoute
-        compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
-            let archiveCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Archives"            `mappend`
-                    defaultContext
-
-            makeItem ""
-                >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
-                >>= loadAndApplyTemplate "templates/default.html" archiveCtx
-                >>= relativizeUrls
-
-
-    match "index.html" $ do
-        route idRoute
-        compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
-            let indexCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    defaultContext
-
-            getResourceBody
-                >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" indexCtx
+    match "sites/*.html" $ do
+        route $ gsubRoute "sites/" (const "")
+        compile $ getResourceBody
+                >>= loadAndApplyTemplate "templates/default.html" defaultContext
                 >>= relativizeUrls
 
     match "templates/*" $ compile templateBodyCompiler
