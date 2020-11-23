@@ -30,7 +30,7 @@ main = hakyll $ do
     match "sites/index.html" $ do
         route $ gsubRoute "sites/" (const "")
         compile $ do
-            let socialItems = map (\s -> Item "" s) socials
+            let socialItems = map (Item "") socials
                 indexCtx = listField "socials" socialCtx (return socialItems)
 
             getResourceBody
