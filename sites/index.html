@@ -13,9 +13,7 @@ title: Home
                     </div>
                     <div class="card-body align-self-end social-list mr-auto">
                         $for(socials)$
-                            <a $aTags$ class="card-link border border-dark rounded-circle social-circle text-center align-middle bg-light">
-                                <i class="$icon$ social-icon"></i>
-                            </a>
+                            $partial("templates/social-circle.html")$
                         $endfor$
                     </div>
                 </div>
