@@ -39,10 +39,21 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/default.html" defaultContext
                 >>= relativizeUrls
 
-    match "sites/cv/competitions.html" $ do
+    match "sites/cv/deOther.html" $ do
         route $ gsubRoute "sites/" (const "")
         compile $ do
-            let compItems = map (Item "") competitions
+            let compItems = map (Item "") deCompetitions
+                compCtx = listField "competitions" competitionCtx (return compItems)
+            
+            getResourceBody
+                >>= applyAsTemplate compCtx
+                >>= loadAndApplyTemplate "templates/default.html" defaultContext
+                >>= relativizeUrls
+
+    match "sites/cv/enOther.html" $ do
+        route $ gsubRoute "sites/" (const "")
+        compile $ do
+            let compItems = map (Item "") enCompetitions
                 compCtx = listField "competitions" competitionCtx (return compItems)
             
             getResourceBody

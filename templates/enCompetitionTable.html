@@ -1,0 +1,22 @@
+<table class="table table-striped">
+    <tr>
+        <th>Year</th>
+        <th>Competition</th>
+        <th>Team/Project</th>
+        <th>Placement/Price</th>
+    </tr>
+    $for(competitions)$
+    <tr>
+        <td>$year$</td>
+        <td>$competition$</td>
+        <td>$project$</td>
+        <td>
+            <ul>
+                $for(placements)$
+                <li>$placement$</li>
+                $endfor$
+            </ul>
+        </td>
+    </tr>
+    $endfor$
+</table>
