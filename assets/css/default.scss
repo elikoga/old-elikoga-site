@@ -15,3 +15,53 @@
 .social-icon {
     font-size: x-large;
 }
+
+@media print { 
+    .container {
+        max-width: 100%;
+        min-width: 0 !important;
+    }
+
+    .table td, .table th {
+        padding: .25rem;
+    }
+
+    dl, ol, ul {
+        font-size: small;
+        margin-bottom: 0;
+    }
+
+    .card {
+        border: 0;
+        break-inside: auto;
+
+    }
+
+    .card-body {
+        break-inside: avoid;
+        break-after: auto;
+    }
+
+    .break-before-page {
+        break-before: page;
+    }
+}
+
+@page {
+    size: A4;
+    @top-left {
+        content: element(topLeft)
+    }
+
+    @top-right {
+        content: element(topRight)
+    }
+}
+
+.margin-top-left {
+    position: running(topLeft);
+}
+
+.margin-top-right {
+    position: running(topRight);
+}
