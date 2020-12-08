@@ -6,7 +6,10 @@ cabal-version:      >= 1.10
 executable site
   main-is:          Main.hs
   other-modules:    Social
-                  , Cv.Competitions
+                  , Cv
+                  , Cv.De
+                  , Cv.En
+                  , Cv.Internal
   build-depends:    base == 4.*
                   , hakyll == 4.13.*
                   , hakyll-sass == 0.2.*

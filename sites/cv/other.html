@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row align-items-center">
+        <div class="card mx-auto w-75 col">
+            <div class="card-body">
+                <a href="./" class="card-link">$back$</a>
+                <h1 class="card-title">$otherTitle$</h1>
+                <p class="card-text">
+                    $otherDescr$
+                </p>
+                <p class="card-text">
+                    $otherLangText$
+                </p>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">$otherPricesSection$</h3>
+                <table class="table table-striped">
+                    <tr>
+                        <th>$year$</th>
+                        <th>$price$</th>
+                    </tr>
+                    $for(prices)$
+                    <tr>
+                        <td>$firstTupleEntry$</td>
+                        <td>$secondTupleEntry$</td>
+                    </tr>
+                    $endfor$
+                </table>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">$eventsSection$</h3>
+                <table class="table table-striped">
+                    <tr>
+                        <th>$year$</th>
+                        <th>$event$</th>
+                    </tr>
+                    $for(events)$
+                    <tr>
+                        <td>$firstTupleEntry$</td>
+                        <td>$secondTupleEntry$</td>
+                    </tr>
+                    $endfor$
+                </table>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">$competitionSection$</h3>
+                <table class="table table-striped">
+                    <tr>
+                        <th>$year$</th>
+                        <th>$competitionLabel$</th>
+                        <th>$projectLabel$</th>
+                        <th>$placementLabel$</th>
+                    </tr>
+                    $for(competitions)$
+                    <tr>
+                        <td>$year$</td>
+                        <td>$competition$</td>
+                        <td>$project$</td>
+                        <td>
+                            <ul>
+                                $for(placements)$
+                                <li>$placement$</li>
+                                $endfor$
+                            </ul>
+                        </td>
+                    </tr>
+                    $endfor$
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

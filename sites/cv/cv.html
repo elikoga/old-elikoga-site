@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="row align-items-center">
+        <div class="card mx-auto w-75 col">
+            <div class="card-body d-flex justify-content-between d-print-none">
+                <p class="card-text margin-top-left">
+                    <i class="fa fa-home"></i> <a href="/">https://eliko.ga/</a><br/>
+                    <i class="fa fa-phone"></i> +49 176 42101199<br/>
+                    <i class="fa fa-envelope"></i> elikowa(at)gmail(dot)com
+                </p>
+                <p class="card-text margin-top-right">$address$</p>
+            </div>
+            <div class="card-body">
+                <a href="/" class="card-link d-print-none">$back$</a>
+                <h2 class="card-title">$resume$</h2>
+                <h3 class="card-title">Eli Kogan-Wang</h3>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">$educationSection$</h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>$year$</th>
+                        <th>$eduInstitution$</th>
+                    </tr>
+                    $for(eduInstitutions)$
+                    <tr>
+                        <td>$firstTupleEntry$</td>
+                        <td>$secondTupleEntry$</td>
+                    </tr>
+                    $endfor$
+                </table>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">$internshipSection$</h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>$year$</th>
+                        <th>$internship$</th>
+                    </tr>
+                    $for(internships)$
+                    <tr>
+                        <td>$firstTupleEntry$</td>
+                        <td>$secondTupleEntry$</td>
+                    </tr>
+                    $endfor$
+                </table>
+            </div>
+            <div class="card-body breakalways">
+                <h4 class="card-title">$languageSection$</h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>$language$</th>
+                        <th>$langKnowledge$</th>
+                    </tr>
+                    $for(languages)$
+                    <tr>
+                        <td>$firstTupleEntry$</td>
+                        <td>$secondTupleEntry$</td>
+                    </tr>
+                    $endfor$
+                </table>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">$otherSection$</h4>
+                <p class="card-text">$otherDescr$</p>
+            </div>
+            <div class="card-body break-before-page">
+                <h4 class="card-title">$devTechnologySection$</h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>$technology$</th>
+                        <th>$keywords$</th>
+                    </tr>
+                    $for(devTechnologies)$
+                    <tr>
+                        <td>$labelListTupleEntry$</td>
+                        <td>
+                            <ul>
+                            $for(listListTupleEntry)$
+                                <li>$string$</li>
+                            $endfor$
+                            </ul>
+                        </td>
+                    </tr>
+                    $endfor$
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

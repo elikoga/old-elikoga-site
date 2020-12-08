@@ -2,13 +2,14 @@
 module Main where 
 
 import Social
-import Cv.Competitions
+import Cv
 
 import Hakyll
 import Hakyll.Web.Sass
+import GHC.IO.Encoding
 
 main :: IO ()
-main = hakyll $ do
+main =  (setLocaleEncoding utf8 >>) $ hakyll $ do
     match "assets/images/**" $ do
         route idRoute
         compile copyFileCompiler
@@ -39,27 +40,51 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/default.html" defaultContext
                 >>= relativizeUrls
 
-    match "sites/cv/deOther.html" $ do
-        route $ gsubRoute "sites/" (const "")
-        compile $ do
-            let compItems = map (Item "") deCompetitions
-                compCtx = listField "competitions" competitionCtx (return compItems)
-            
-            getResourceBody
-                >>= applyAsTemplate compCtx
-                >>= loadAndApplyTemplate "templates/default.html" defaultContext
-                >>= relativizeUrls
+    match "sites/cv/cv.html" $ version "de" $ do
+        route $ gsubRoute "sites/cv/cv" (const "cv/de/index")
+        compile $ getResourceBody
+            >>= applyAsTemplate deCvCtx
+            >>= loadAndApplyTemplate "templates/default.html" defaultContext
+            >>= relativizeUrls
+                
+    match "sites/cv/cv.html" $ version "dePrint" $ do
+        route $ gsubRoute "sites/cv/cv" (const "cv/de/print")
+        compile $ getResourceBody
+            >>= (\(Item ident s) 
+                -> return . Item ident $("<script src=\"https://unpkg.com/pagedjs/dist/paged.polyfill.js\"></script>" ++ s))
+            >>= applyAsTemplate deCvCtx
+            >>= loadAndApplyTemplate "templates/default.html" defaultContext
+            >>= relativizeUrls
 
-    match "sites/cv/enOther.html" $ do
-        route $ gsubRoute "sites/" (const "")
-        compile $ do
-            let compItems = map (Item "") enCompetitions
-                compCtx = listField "competitions" competitionCtx (return compItems)
-            
-            getResourceBody
-                >>= applyAsTemplate compCtx
-                >>= loadAndApplyTemplate "templates/default.html" defaultContext
-                >>= relativizeUrls
+    match "sites/cv/cv.html" $ version "en" $ do
+        route $ gsubRoute "sites/cv/cv" (const "cv/en/index")
+        compile $ getResourceBody
+            >>= applyAsTemplate enCvCtx
+            >>= loadAndApplyTemplate "templates/default.html" defaultContext
+            >>= relativizeUrls
+
+    match "sites/cv/cv.html" $ version "enPrint" $ do
+        route $ gsubRoute "sites/cv/cv" (const "cv/en/print")
+        compile $ getResourceBody
+            >>= (\(Item ident s) 
+                -> return . Item ident $("<script src=\"https://unpkg.com/pagedjs/dist/paged.polyfill.js\"></script>" ++ s))
+            >>= applyAsTemplate enCvCtx
+            >>= loadAndApplyTemplate "templates/default.html" defaultContext
+            >>= relativizeUrls
+
+    match "sites/cv/other.html" $ version "de" $ do
+        route $ gsubRoute "sites/cv/" (const "cv/de/")
+        compile $ getResourceBody
+            >>= applyAsTemplate deOtherCtx
+            >>= loadAndApplyTemplate "templates/default.html" defaultContext
+            >>= relativizeUrls
+
+    match "sites/cv/other.html" $ version "en" $ do
+        route $ gsubRoute "sites/cv/" (const "cv/en/")
+        compile $ getResourceBody
+            >>= applyAsTemplate enOtherCtx
+            >>= loadAndApplyTemplate "templates/default.html" defaultContext
+            >>= relativizeUrls
 
     match "sites/**.md" $ do
         route $ gsubRoute "sites/" (const "") `composeRoutes` setExtension "html"
