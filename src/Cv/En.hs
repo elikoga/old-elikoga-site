@@ -11,6 +11,7 @@ enCvCtx :: Context String
 enCvCtx = constField "address" "Eli Kogan-Wang<br/>Von-Stauffenberg-Str. 22<br/>33102 Paderborn"
     <> constField "back" "Go back to main Page"
     <> constField "resume" "Résumé"
+    <> constField "title" "Prospective high school graduate"
     <> constField "educationSection" "Education"
     <> constField "year" "Year"
     <> constField "eduInstitution" "School"

@@ -11,6 +11,7 @@ deCvCtx :: Context String
 deCvCtx = constField "address" "Eli Kogan-Wang<br/>Von-Stauffenberg-Str. 22<br/>33102 Paderborn"
     <> constField "back" "Zurück zur Hauptseite"
     <> constField "resume" "Lebenslauf"
+    <> constField "title" "Angehender Abiturient"
     <> constField "educationSection" "Bildung"
     <> constField "year" "Jahr"
     <> constField "eduInstitution" "Schule"
