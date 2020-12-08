@@ -101,6 +101,8 @@ deEvents :: [Item TupleEntry]
 deEvents = map (Item "") 
     [ TupleEntry "2017" "Schülerakademie Mathematik (SAM-OWL)"
     , TupleEntry "2018" "Workshop - Erstellung einer responsiven Website im Team"
+    , TupleEntry "2018" "PIT-Hackathon by Paderborn ist Informatik e.V. - Unity3D+OpenXR"
+    , TupleEntry "2018" "PIT-Hackathon by Paderborn ist Informatik e.V. - Unity3D"
     ]
 
 deCompetitions :: [Item Competition]
