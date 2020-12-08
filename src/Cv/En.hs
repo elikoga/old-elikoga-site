@@ -42,8 +42,8 @@ enInternships = map (Item "")
     [ TupleEntry "2018" "Career Exploration Day at WABSOLUTE GmbH"
     , TupleEntry "2018" "Career Exploration Day at Hesse Mechatronics"
     , TupleEntry "2018" "Career Exploration Day at the WFG Paderborn mbH"
-    , TupleEntry "2020" "School studen internship at the Fastec GmbH<br/>C#/WPF Development"
-    , TupleEntry "2020" "School studen internship at the ORDIX AG<br/>PHP Entwicklung"
+    , TupleEntry "2020" "School student internship at the Fastec GmbH<br/>C#/WPF Development"
+    , TupleEntry "2020" "School student internship at the ORDIX AG<br/>PHP Entwicklung"
     ]
 
 enLanguages :: [Item TupleEntry]
