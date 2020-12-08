@@ -27,7 +27,7 @@ deCvCtx = constField "address" "Eli Kogan-Wang<br/>Von-Stauffenberg-Str. 22<br/>
     <> constField "keywords" "Schlüsselbegriffe"
     <> listField "devTechnologies" ltCtx (return deDevTechnologies)
     <> constField "otherSection" "Andere Einträge"
-    <> constField "otherDescr" "Andere potentiell relevante Einträge wie beispielsweise MINT-Wettbewerbsteilnahmen oder Fortbildungen sind bei <a href=\"de/other.html\">https://eliko.ga/cv/de/other.html</a> zu finden."
+    <> constField "otherDescr" "Andere potentiell relevante Einträge wie beispielsweise MINT-Wettbewerbsteilnahmen oder Fortbildungen sind bei <a href=\"/cv/de/other.html\">https://eliko.ga/cv/de/other.html</a> zu finden."
     <> defaultContext
 
 deEdus :: [Item TupleEntry]
