@@ -63,7 +63,7 @@ deDevTechnologies = map (Item "")
     , ListTupleEntry "JavaScript" ["Node.js", "express.js"]
     , ListTupleEntry "PHP" ["Laravel Framework"]
     , ListTupleEntry "HTML/CSS" ["Bootstrap", "jQuery"]
-    , ListTupleEntry "SQL" ["MySQL/MariaDB", "PostgreSQL"]
+    , ListTupleEntry "SQL" ["MySQL/MariaDB", "PostgreSQL", "SQLite"]
     , ListTupleEntry "Kotlin" []
     , ListTupleEntry "Haskell" ["Stack", "Yesod", "Hakyll", "mtl"]
     , ListTupleEntry "Linux" ["Bash", "Debian", "Ubuntu", "NixOS", "Arch Linux"]
