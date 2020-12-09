@@ -39,7 +39,7 @@ enEdus = map (Item "")
 
 enInternships :: [Item TupleEntry]
 enInternships = map (Item "") 
-    [ TupleEntry "2018" "Career Exploration Day at WABSOLUTE GmbH"
+    [ TupleEntry "2018" "Career Exploration Day at WABSOLUTE® GmbH"
     , TupleEntry "2018" "Career Exploration Day at Hesse Mechatronics"
     , TupleEntry "2018" "Career Exploration Day at the WFG Paderborn mbH"
     , TupleEntry "2020" "School student internship at the Fastec GmbH<br/>C#/WPF Development"

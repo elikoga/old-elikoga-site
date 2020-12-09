@@ -39,7 +39,7 @@ deEdus = map (Item "")
 
 deInternships :: [Item TupleEntry]
 deInternships = map (Item "") 
-    [ TupleEntry "2018" "Berufsfelderkundungstag bei WABSOLUTE®"
+    [ TupleEntry "2018" "Berufsfelderkundungstag bei der WABSOLUTE® GmbH"
     , TupleEntry "2018" "Berufsfelderkundungstag bei Hesse Mechatronics"
     , TupleEntry "2018" "Berufsfelderkundungstag bei der WFG Paderborn mbH"
     , TupleEntry "2020" "Schülerpraktikum bei der Fastec GmbH<br/>C#/WPF Entwicklung"
