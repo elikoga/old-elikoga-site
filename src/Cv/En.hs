@@ -7,8 +7,12 @@ module Cv.En
 import Hakyll
 import Cv.Internal
 
+import Data.List
+import Data.Function
+
 enCvCtx :: Context String
-enCvCtx = constField "address" "Eli Kogan-Wang<br/>Von-Stauffenberg-Str. 22<br/>33102 Paderborn"
+enCvCtx = constField "birthdate" "11th December 2004"
+    <> constField "address" "Eli Kogan-Wang<br/>Von-Stauffenberg-Str. 22<br/>33102 Paderborn<br/>Germany"
     <> constField "back" "Go back to main Page"
     <> constField "resume" "Résumé"
     <> constField "title" "Prospective high school graduate"
@@ -32,13 +36,13 @@ enCvCtx = constField "address" "Eli Kogan-Wang<br/>Von-Stauffenberg-Str. 22<br/>
     <> defaultContext
 
 enEdus :: [Item TupleEntry]
-enEdus = map (Item "") 
+enEdus = reverse $ map (Item "") 
     [ TupleEntry "2010-2013" "Primary school: Grundschule Bonifatius"
     , TupleEntry "2013-2021" "Secondary school: Gymnasium Schloß Neuhaus"
     ]
 
 enInternships :: [Item TupleEntry]
-enInternships = map (Item "") 
+enInternships = reverse $ map (Item "") 
     [ TupleEntry "2018" "Career Exploration Day at WABSOLUTE® GmbH"
     , TupleEntry "2018" "Career Exploration Day at Hesse Mechatronics"
     , TupleEntry "2018" "Career Exploration Day at the WFG Paderborn mbH"
@@ -54,7 +58,7 @@ enLanguages = map (Item "")
     ]
 
 enDevTechnologies :: [Item ListTupleEntry]
-enDevTechnologies = map (Item "")
+enDevTechnologies = map (Item "") . sortBy (compare `on` labelListTupleEntry) $
     [ ListTupleEntry "C/C++" ["ESP32", "ATmega Microcontroller", "CMake"]
     , ListTupleEntry "Java" ["Maven"]
     , ListTupleEntry "Python" ["NumPy/SciPy", "OpenCV", "matplotlib"]
@@ -64,7 +68,7 @@ enDevTechnologies = map (Item "")
     , ListTupleEntry "PHP" ["Laravel Framework"]
     , ListTupleEntry "HTML/CSS" ["Bootstrap", "jQuery"]
     , ListTupleEntry "SQL" ["MySQL/MariaDB", "PostgreSQL", "SQLite"]
-    , ListTupleEntry "Kotlin" []
+    , ListTupleEntry "Kotlin" ["Micronaut"]
     , ListTupleEntry "Haskell" ["Stack", "Yesod", "Hakyll", "mtl"]
     , ListTupleEntry "Linux" ["Bash", "Debian", "Ubuntu", "NixOS", "Arch Linux"]
     , ListTupleEntry "Docker" ["Docker Compose"]
