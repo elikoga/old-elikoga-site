@@ -23,11 +23,11 @@ deCvCtx = constField "birthdate" "11. Dezember 2004"
     <> constField "internshipSection" "Praktika"
     <> constField "internship" "Praktikum"
     <> listField "internships" teCtx (return deInternships)
-    <> constField "languageSection" "Sprachkentnisse"
+    <> constField "languageSection" "Sprachkenntnisse"
     <> constField "language" "Sprache"
     <> constField "langKnowledge" "Erfahrung"
     <> listField "languages" teCtx (return deLanguages)
-    <> constField "devTechnologySection" "Technische Kentnisse"
+    <> constField "devTechnologySection" "Technische Kenntnisse"
     <> constField "technology" "Sprache/Technologie"
     <> constField "keywords" "Schlüsselbegriffe"
     <> listField "devTechnologies" ltCtx (return deDevTechnologies)
