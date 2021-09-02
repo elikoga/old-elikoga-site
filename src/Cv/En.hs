@@ -15,10 +15,10 @@ enCvCtx = constField "birthdate" "11th December 2004"
     <> constField "address" "Eli Kogan-Wang<br/>Von-Stauffenberg-Str. 22<br/>33102 Paderborn<br/>Germany"
     <> constField "back" "Go back to main Page"
     <> constField "resume" "Résumé"
-    <> constField "title" "Prospective high school graduate"
+    <> constField "title" "University student"
     <> constField "educationSection" "Education"
     <> constField "year" "Year"
-    <> constField "eduInstitution" "School"
+    <> constField "eduInstitution" "Educational institution"
     <> listField "eduInstitutions" teCtx (return enEdus)
     <> constField "internshipSection" "Internships"
     <> constField "internship" "Internship"
@@ -39,6 +39,7 @@ enEdus :: [Item TupleEntry]
 enEdus = reverse $ map (Item "") 
     [ TupleEntry "2010-2013" "Primary school: Grundschule Bonifatius"
     , TupleEntry "2013-2021" "Secondary school: Gymnasium Schloß Neuhaus"
+    , TupleEntry "2021-*" "Paderborn University"
     ]
 
 enInternships :: [Item TupleEntry]
