@@ -24,7 +24,7 @@ socialCtx = field "aTags" tagsFromSocial
 
 tagsFromSocial :: Item SocialConnection -> Compiler String
 tagsFromSocial (Item _id (LinkTo link _icon)) = return $
-    "href=\"" <> link <> "\""
+    "target=\"_blank\" href=\"" <> link <> "\""
 tagsFromSocial (Item _id (CopyString copyString titleString _icon)) = return $
     "href=\"#\" onclick=\"copyString("
     <> copyString
