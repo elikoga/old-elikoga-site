@@ -48,6 +48,8 @@ deInternships = reverse $ map (Item "")
     , TupleEntry "2018" "Berufsfelderkundungstag bei der WFG Paderborn mbH"
     , TupleEntry "2020" "Schülerpraktikum bei der Fastec GmbH<br/>C#/WPF Entwicklung"
     , TupleEntry "2020" "Schülerpraktikum bei der ORDIX AG<br/>PHP Entwicklung"
+    , TupleEntry "2021" "Vergütetes Praktikum bei der Flying Circus Internet Operations GmbH<br/><a href=\"https://github.com/flyingcircusio/fc-nixos/commits?author=elikoga&until=2021-07-13\">NixOS Plattform Entwicklung</a>"
+    , TupleEntry "2021" "Vergütetes Praktikum bei der Weidmüller Interface GmbH & Co. KG<br/>Frontend Entwicklung mit Svelte"
     ]
 
 deLanguages :: [Item TupleEntry]
