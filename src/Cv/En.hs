@@ -47,7 +47,9 @@ enInternships = reverse $ map (Item "")
     , TupleEntry "2018" "Career Exploration Day at Hesse Mechatronics"
     , TupleEntry "2018" "Career Exploration Day at the WFG Paderborn mbH"
     , TupleEntry "2020" "School student internship at the Fastec GmbH<br/>C#/WPF Development"
-    , TupleEntry "2020" "School student internship at the ORDIX AG<br/>PHP Entwicklung"
+    , TupleEntry "2020" "School student internship at the ORDIX AG<br/>PHP Development"
+    , TupleEntry "2021" "Paid internship at the Flying Circus Internet Operations GmbH<br/><a href=\"https://github.com/flyingcircusio/fc-nixos/commits?author=elikoga&until=2021-07-13\">NixOS Platform Development</a>"
+    , TupleEntry "2021" "Paid internship at the Weidmüller Interface GmbH & Co. KG<br/>Frontend Development with Svelte, "
     ]
 
 enLanguages :: [Item TupleEntry]
