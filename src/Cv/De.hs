@@ -15,10 +15,10 @@ deCvCtx = constField "birthdate" "11. Dezember 2004"
     <> constField "address" "Eli Kogan-Wang<br/>Von-Stauffenberg-Str. 22<br/>33102 Paderborn<br/>Deutschland"
     <> constField "back" "Zurück zur Hauptseite"
     <> constField "resume" "Lebenslauf"
-    <> constField "title" "Angehender Abiturient"
+    <> constField "title" "Student"
     <> constField "educationSection" "Bildung"
     <> constField "year" "Jahr"
-    <> constField "eduInstitution" "Schule"
+    <> constField "eduInstitution" "Bildungseinrichtung"
     <> listField "eduInstitutions" teCtx (return deEdus)
     <> constField "internshipSection" "Praktika"
     <> constField "internship" "Praktikum"
@@ -39,6 +39,7 @@ deEdus :: [Item TupleEntry]
 deEdus = reverse $ map (Item "")
     [ TupleEntry "2010-2013" "Grundschule Bonifatius"
     , TupleEntry "2013-2021" "Gymnasium Schloß Neuhaus"
+    , TupleEntry "2021-*" "Universität Paderborn"
     ]
 
 deInternships :: [Item TupleEntry]
