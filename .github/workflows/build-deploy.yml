@@ -34,6 +34,6 @@ jobs:
         if: github.ref == 'refs/heads/master'
         with:
           publish_dir: ./_site
-          external_repository: elikoga/elikoga.github.io
+          external_repository: elikoga/cv.eliko.ga
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
-          cname: eliko.ga
+          cname: cv.eliko.ga
