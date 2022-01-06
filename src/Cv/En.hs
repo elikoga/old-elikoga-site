@@ -32,7 +32,7 @@ enCvCtx = constField "birthdate" "11th December 2004"
     <> constField "keywords" "Keywords"
     <> listField "devTechnologies" ltCtx (return enDevTechnologies)
     <> constField "otherSection" "Other entries"
-    <> constField "otherDescr" "Other potentially relevant entries like STEM-Competition participations or further training are avialiable at <a href=\"/cv/en/other.html\">https://eliko.ga/cv/en/other.html</a>."
+    <> constField "otherDescr" "Other potentially relevant entries like STEM-Competition participations or further training are avialiable at <a href=\"/cv/en/other.html\">https://cv.eliko.ga/cv/en/other.html</a>."
     <> defaultContext
 
 enEdus :: [Item TupleEntry]

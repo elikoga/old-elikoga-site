@@ -32,7 +32,7 @@ deCvCtx = constField "birthdate" "11. Dezember 2004"
     <> constField "keywords" "Schlüsselbegriffe"
     <> listField "devTechnologies" ltCtx (return deDevTechnologies)
     <> constField "otherSection" "Andere Einträge"
-    <> constField "otherDescr" "Andere potentiell relevante Einträge wie beispielsweise MINT-Wettbewerbsteilnahmen oder Fortbildungen sind bei <a href=\"/cv/de/other.html\">https://eliko.ga/cv/de/other.html</a> zu finden."
+    <> constField "otherDescr" "Andere potentiell relevante Einträge wie beispielsweise MINT-Wettbewerbsteilnahmen oder Fortbildungen sind bei <a href=\"/cv/de/other.html\">https://cv.eliko.ga/cv/de/other.html</a> zu finden."
     <> defaultContext
 
 deEdus :: [Item TupleEntry]
