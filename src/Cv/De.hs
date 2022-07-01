@@ -11,8 +11,7 @@ import Data.List
 import Data.Function
 
 deCvCtx :: Context String
-deCvCtx = constField "birthdate" "11. Dezember 2004"
-    <> constField "address" "Eli Kogan-Wang<br/>Von-Stauffenberg-Str. 22<br/>33102 Paderborn<br/>Deutschland"
+deCvCtx = constField "address" "Eli Kogan-Wang<br/>Im Lichenfelde 47<br/>33100 Paderborn<br/>Deutschland"
     <> constField "back" "Zurück zur Hauptseite"
     <> constField "resume" "Lebenslauf"
     <> constField "title" "Student"

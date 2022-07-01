@@ -11,8 +11,7 @@ import Data.List
 import Data.Function
 
 enCvCtx :: Context String
-enCvCtx = constField "birthdate" "11th December 2004"
-    <> constField "address" "Eli Kogan-Wang<br/>Von-Stauffenberg-Str. 22<br/>33102 Paderborn<br/>Germany"
+enCvCtx = constField "address" "Eli Kogan-Wang<br/>Im Lichtenfelde 47<br/>33100 Paderborn<br/>Germany"
     <> constField "back" "Go back to main Page"
     <> constField "resume" "Résumé"
     <> constField "title" "University student"
